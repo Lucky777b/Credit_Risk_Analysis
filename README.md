@@ -24,7 +24,7 @@ Using imbalanced-learn and scikit-learn libraries, I was able to build and evalu
 
 ## Results 
 
-### Table Results of All Machine Learning Algorithm Methods
+### Table Results(Average) of All Machine Learning Algorithm Methods For Both Low-Risk and High-Risk Loans
 
 | Model Used                     | Accuracy Score  | Precision | Recall | F1 |
 | :------------------------------| --------------: | ---------:| ------:|---:|
@@ -49,9 +49,9 @@ Using imbalanced-learn and scikit-learn libraries, I was able to build and evalu
   * Value of 1 (High F1 Score): model perfectly classifies each observation into the correct class
   * Value of 0 (Low F1 Score): model is unable to classify any observation into the correct class
 
-1. Oversample the data using RandomOverSampler and SMOTE algorithms
+***1. Oversample the data using RandomOverSampler and SMOTE algorithms***
 
-   * RandomOverSampler 
+   ### RandomOverSampler 
 
    ![RandomOverSampler](https://github.com/Lucky777b/Credit_Risk_Analysis/blob/main/Resources/RandomOverSampler.png)
 
@@ -61,7 +61,7 @@ Using imbalanced-learn and scikit-learn libraries, I was able to build and evalu
    * The low-risk F1 score = 0.81, because precision was high and recall(sensitivity) was relatively high, resulting in a higher F1 score. 
    * The high-risk F1 score = 0.02, because precision was extremely low and recall was not super low, but not super high either, resulting in a low F1 score. 
 
-   * SMOTE 
+   ### SMOTE 
 
    ![SMOTE](https://github.com/Lucky777b/Credit_Risk_Analysis/blob/main/Resources/SMOTE_oversampling.png)
 
@@ -71,9 +71,9 @@ Using imbalanced-learn and scikit-learn libraries, I was able to build and evalu
    * The low-risk F1 score = 0.78, because precision was high and recall(sensitivity) was relatively high, resulting in a medium F1 score. 
    * The high-risk F1 score = 0.02, because precision was extremely low and recall was not super low, but not super high either, resulting in a low F1 score. 
 
-2. Undersample the data using ClusterCentroids algorithm
+***2. Undersample the data using ClusterCentroids algorithm***
 
-   * ClusterCentroids 
+   ### ClusterCentroids 
 
    ![ClusterCentroids](https://github.com/Lucky777b/Credit_Risk_Analysis/blob/main/Resources/ClusterCentroids.png)
 
@@ -83,9 +83,9 @@ Using imbalanced-learn and scikit-learn libraries, I was able to build and evalu
    * The low-risk F1 score = 0.62, because precision was high and recall(sensitivity) was relatively low, resulting in a medium F1 score. 
    * The high-risk F1 score = 0.01, because precision was extremely low and recall was not super low, but not super high either, resulting in a low F1 score. 
 
-3. Combinatorial approach of over- and undersampling using the SMOTEENN algorithm
+***3. Combinatorial approach of over- and undersampling using the SMOTEENN algorithm***
 
-   * SMOTEENN
+   ### SMOTEENN
 
    ![SMOTEENN](https://github.com/Lucky777b/Credit_Risk_Analysis/blob/main/Resources/SMOTEENN_over_undersampling.png)
 
@@ -96,9 +96,9 @@ Using imbalanced-learn and scikit-learn libraries, I was able to build and evalu
    * The high-risk F1 score = 0.02, because precision was extremely low and recall was relatively higher, resulting in a low F1 score. 
 
 
-4. Compare 2 machine learning models that reduce bias to predict credit risk: BalancedRandomForestClassifier and EasyEnsembleClassifier
+***4. Compare 2 machine learning models that reduce bias to predict credit risk: BalancedRandomForestClassifier and EasyEnsembleClassifier***
 
-   * BalancedRandomForestClassifier 
+   ### BalancedRandomForestClassifier 
 
    ![BRF](https://github.com/Lucky777b/Credit_Risk_Analysis/blob/main/Resources/RandomForestClassifier.png)
 
@@ -108,7 +108,7 @@ Using imbalanced-learn and scikit-learn libraries, I was able to build and evalu
    * The low-risk F1 score = 0.95, because precision was high and recall(sensitivity) was really high, resulting in an F1 score close to 1, indicating an almost perfect model in detecting low-risk loan candidates.
    * The high-risk F1 score = 0.07, because precision was extremely low and a medium recall score, resulting in a lower F1 score. 
 
-   * EasyEnsembleClassifier 
+   ### EasyEnsembleClassifier 
 
    ![Ensemble](https://github.com/Lucky777b/Credit_Risk_Analysis/blob/main/Resources/EasyEnsembleAdaBoostClassifier.png)
 
@@ -117,9 +117,6 @@ Using imbalanced-learn and scikit-learn libraries, I was able to build and evalu
    * The recall score for high-risk = 0.91, which means that the bad candidate loans were correctly assessed 91% of the time. 
    * The low-risk F1 score = 0.97, because precision was high and recall(sensitivity) was high as well, resulting in an F1 score close to 1, indicating an almost perfect model in detecting low-risk loan candidates. 
    * The high-risk F1 score = 0.14, because precision was low and recall score was extremely high, resulting in a lower F1 score. This F1 score was highest comparatively to the rest of the 5 models. 
-
-
-   -- possible overfitting? Moreover, an extremely high metric should raise your suspicion of overfitting. Overfitting refers to an instance in which the patterns picked up by a model are too specific to a specific dataset
 
 ## Summary 
 
